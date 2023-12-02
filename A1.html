@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKATHON</title>
+</head>
+<body>
+    <center>
+        <h1>Find the Missing Number</h1>
+    </center>
+    <hr>
+    <h1 id="missing"></h1>
+    <script>
+        function getMissingNo(a, n) {
+            let total = Math.floor((n + 1) * (n + 2) / 2);
+            for (let i = 0; i < n; i++)
+                total -= a[i];
+            return total;
+        }
+    
+        let arr = [ 1, 2, 4, 5 ];
+        let N = arr.length;
+        let miss = getMissingNo(arr, N);
+
+        document.write(`<h1>The missing number is : ${miss}</h1>`);
+        
+        document.getElementById("missing").innerHTML = miss;   
+    </script>
+
+</body>
+</html>
